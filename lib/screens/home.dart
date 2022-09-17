@@ -3,6 +3,8 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:medicalapp/screens/appointment.dart';
 import 'package:medicalapp/screens/mainhome.dart';
+import 'package:medicalapp/screens/messages.dart';
+import 'package:medicalapp/screens/settings.dart';
 import 'package:medicalapp/services/colorlog.dart';
 
 class Home extends StatefulWidget {
@@ -61,11 +63,11 @@ class _HomeState extends State<Home> {
       ),
       body: IndexedStack(
         index: currentIndex,
-        children: [
-           const MainHomePage(),
-          AppointmentPage(title: 'Message'),
-          AppointmentPage(title: 'Schedule'),
-          AppointmentPage(title: 'Settings'),
+        children: const [
+          MainHomePage(),
+          Messages(),
+          AppointmentPage(),
+          Settings(),
         ],
       ));
   }

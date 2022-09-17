@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:medicalapp/screens/doctor.dart';
 import 'package:medicalapp/services/colorlog.dart';
 
 class MainHomePage extends StatelessWidget {
@@ -185,7 +186,274 @@ class MainHomePage extends StatelessWidget {
           padding: EdgeInsets.fromLTRB(10,20,0,0),
           child: Text("Popular Doctors",
           style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),),
+        ), Container(
+          color: Colors.white,
+          child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            GestureDetector(
+              onTap: (){
+                Scaffold.of(context).showSnackBar(SnackBar(
+      content: Text("You Tapped on Dr. Viola"),
+    ));
+ Navigator.of(context).push(MaterialPageRoute(builder:(context)=>const DoctorPage()));
+              },
+              child: Container(
+                width: size.width * 0.4,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.black.withOpacity(0.3),
+                        spreadRadius: 0,
+                        blurRadius: 5,
+                        offset: const Offset(3, 5))
+                  ],
+                ),
+                padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+                margin: EdgeInsets.all(15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'images/face2.png',
+                      height: 80,
+                      width: 80,
+                      fit: BoxFit.contain,
+                    ),
+                    const Text(
+                      "Dr. Viola Dunn",
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(5),
+                      child: Text(
+                        "Pediatrician",
+                        style: TextStyle(color: Colors.black38),
+                      ),
+                    ),
+                    Container(
+                      width: size.width * 0.15,
+                      padding:const EdgeInsets.all(5),
+                      decoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 246, 214, 225),
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.star,
+                            size: 18,
+                            color: Colors.yellow.shade700,
+                          ),
+                          const Text(
+                            "4.9",
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            InkWell(
+              splashColor: primaryColor,
+              onTap: (){
+                Scaffold.of(context).showSnackBar(SnackBar(
+      content: Text("You Tapped on Dr. Chris Frazier"),
+    ));
+    Navigator.pushNamed(context, "/doctor");
+              },
+              child: Container(
+                width: size.width * 0.4,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.black.withOpacity(0.3),
+                        spreadRadius: 0,
+                        blurRadius: 5,
+                        offset: const Offset(2, 5))
+                  ],
+                ),
+                padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+                margin: EdgeInsets.all(15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'images/face.png',
+                      height: 80,
+                      width: 80,
+                      fit: BoxFit.contain,
+                    ),
+                    const Text(
+                      "Dr. Chris Frazier",
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: const Text("Therapist",
+                          style: TextStyle(color: Colors.black38)),
+                    ),
+                    Container(
+                      width: size.width * 0.15,
+                      padding: EdgeInsets.all(5),
+                      decoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 246, 214, 225),
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.star,
+                            size: 18,
+                            color: Colors.yellow.shade700,
+                          ),
+                          Text(
+                            "5.0",
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ]),
         ),
+        Container(
+          color: Colors.white,
+          child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Container(
+              width: size.width * 0.4,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.black.withOpacity(0.3),
+                      spreadRadius: 0,
+                      blurRadius: 5,
+                      offset: const Offset(3, 5))
+                ],
+              ),
+              padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+              margin: EdgeInsets.all(15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'images/face2.png',
+                    height: 80,
+                    width: 80,
+                    fit: BoxFit.contain,
+                  ),
+                  const Text(
+                    "Dr. Laura Amadi",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(5),
+                    child: const Text(
+                      "Pediatrician",
+                      style: TextStyle(color: Colors.black38),
+                    ),
+                  ),
+                  Container(
+                    width: size.width * 0.15,
+                    padding: EdgeInsets.all(5),
+                    decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 246, 214, 225),
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.star,
+                          size: 18,
+                          color: Colors.yellow.shade700,
+                        ),
+                        Text(
+                          "5.0",
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              width: size.width * 0.4,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.black.withOpacity(0.3),
+                      spreadRadius: 0,
+                      blurRadius: 5,
+                      offset: const Offset(2, 5))
+                ],
+              ),
+              padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+              margin: EdgeInsets.all(15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'images/face.png',
+                    height: 80,
+                    width: 80,
+                    fit: BoxFit.contain,
+                  ),
+                  const Text(
+                    "Dr. Chizy Aruah",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  const Padding(
+                    padding:  EdgeInsets.all(5),
+                    child: Text("Therapist",
+                        style: TextStyle(color: Colors.black38)),
+                  ),
+                  Container(
+                    width: size.width * 0.15,
+                    padding:const EdgeInsets.all(5),
+                    decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 246, 214, 225),
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.star,
+                          size: 18,
+                          color: Colors.yellow.shade700,
+                        ),
+                        const Text(
+                          "4.6",
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ]),
+        )
+      
       ]);
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:medicalapp/screens/doctor.dart';
 import 'package:medicalapp/screens/home.dart';
+import 'package:medicalapp/screens/messages.dart';
 import 'package:medicalapp/services/colorlog.dart';
 
 void main() {
@@ -28,6 +30,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: colorCustom,
       ),
       home: const Home(),
+      routes:{
+        "/doctor":(context)=>const DoctorPage(),
+        "/pharmacy":(context)=>const Messages()
+      } ,
     );
   }
 }
