@@ -11,8 +11,25 @@ class AppointmentPage extends StatefulWidget {
 class _AppointmentPageState extends State<AppointmentPage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("Appointment"),
+    return SafeArea(
+      child: Stack()
+      );
+  }
+
+
+  Widget TopBar(){
+    return Stack(
+      children: [
+        IconButton(
+          onPressed: (){
+              Navigator.pop(context);
+          }, 
+          icon: const Icon(Icons.chevron_left, color: Colors.white,)),
+          Column(children: const[
+            Text("Dr. Viola Dunn"),
+            Text("Therapist"),
+          ],)
+      ],
     );
   }
 }

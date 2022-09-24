@@ -5,6 +5,9 @@ import 'package:medicalapp/models/chatmodel.dart';
 import 'package:medicalapp/screens/chatpage.dart';
 import 'package:medicalapp/services/colorlog.dart';
 
+import 'contact.dart';
+import 'contacts2.dart';
+
 class Messages extends StatefulWidget {
   const Messages({Key? key}) : super(key: key);
 
@@ -32,7 +35,7 @@ class _MessagesState extends State<Messages> {
                     },
                     leading: Image.asset(item.image),
                     title: Text(item.username),
-                    subtitle: Text(item.lastmessage),
+                    subtitle: Text(item.message),
                     trailing: Text(item.dateTime.toString()),
                   ),
                   Divider(color: Color.fromARGB(255, 194, 190, 190),height: 0.7,)
@@ -40,11 +43,15 @@ class _MessagesState extends State<Messages> {
               );
             },
           ),
-        const Padding(
+       Padding(
           padding: const EdgeInsets.fromLTRB(0,0,20,20),
           child: Align(
             alignment: Alignment.bottomRight,
-            child: Icon(Icons.add_circle,size: 60,color: primaryColor,)),
+            child: GestureDetector(
+              child: Icon(Icons.add_circle,size: 70,color: primaryColor,),
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Contact2Page()));
+              },)),
         )
       ],
     );

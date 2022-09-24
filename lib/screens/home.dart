@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:medicalapp/screens/appointment.dart';
+import 'package:medicalapp/screens/doctor.dart';
 import 'package:medicalapp/screens/mainhome.dart';
 import 'package:medicalapp/screens/messages.dart';
 import 'package:medicalapp/screens/settings.dart';
