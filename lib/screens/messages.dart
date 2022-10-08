@@ -22,6 +22,7 @@ class _MessagesState extends State<Messages> {
     chats.sort((a,b)=>b.dateTime.compareTo(a.dateTime));
     return  Stack(
       children: [
+
         ListView.builder(
             itemCount: chats.length,
             itemBuilder: (context, index){
@@ -43,16 +44,19 @@ class _MessagesState extends State<Messages> {
               );
             },
           ),
-       Padding(
-          padding: const EdgeInsets.fromLTRB(0,0,20,20),
-          child: Align(
-            alignment: Alignment.bottomRight,
+        Positioned(
+          right: 0,
+          bottom:0,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(0,0,20,20),
             child: GestureDetector(
               child: Icon(Icons.add_circle,size: 70,color: primaryColor,),
               onTap: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>Contact2Page()));
-              },)),
+              },),
+          ),
         )
+      
       ],
     );
   }

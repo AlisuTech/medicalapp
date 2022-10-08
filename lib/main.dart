@@ -1,10 +1,14 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:medicalapp/screens/doctor.dart';
 import 'package:medicalapp/screens/home.dart';
+import 'package:medicalapp/screens/login.dart';
 import 'package:medicalapp/screens/messages.dart';
 import 'package:medicalapp/services/colorlog.dart';
 
-void main() {
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: FirebaseOptions(apiKey: 'AIzaSyDxmmMOZDlQ4HsNTFtAosV8QRulWP5RFgo', appId: '1:1082972029862:android:453666f9d53bcfc0544567', messagingSenderId: '', projectId: 'chatapp-1e151'));
   runApp(const MyApp());
 }
 
@@ -29,7 +33,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: colorCustom,
       ),
-      home: const Home(),
+      home: const login(),
       routes:{
         "/doctor":(context)=>const DoctorPage(),
         "/pharmacy":(context)=>const Messages()

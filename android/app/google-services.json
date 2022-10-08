@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1082972029862",
+    "project_id": "chatapp-1e151",
+    "storage_bucket": "chatapp-1e151.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082972029862:android:453666f9d53bcfc0544567",
+        "android_client_info": {
+          "package_name": "com.techorigin.medical"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1082972029862-opancont4eqe4pelafbs6q58cq884kno.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxmmMOZDlQ4HsNTFtAosV8QRulWP5RFgo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1082972029862-opancont4eqe4pelafbs6q58cq884kno.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
