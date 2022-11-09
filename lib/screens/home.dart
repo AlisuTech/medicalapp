@@ -43,12 +43,12 @@ var firestore=FirebaseFirestore.instance;
 var usersCollection=firestore.collection("newusers");
 var uid=const Uuid().v1();
 
-// await usersCollection.doc(uid).set({
-//   "name":"Ekezie Nanette",
-//   "email":"nanette@gmail.com",
-//   "state":"Imo State",
-//   "uid":uid
-// });
+await usersCollection.doc(uid).set({
+  "name":"Ekezie Nanette",
+  "email":"nanette@gmail.com",
+  "state":"Imo State",
+  "uid":uid
+});
 
 
 //Updating Existing Users
@@ -69,8 +69,11 @@ print("Done creating user");
 
 
 //Delete Data from Firebase
-
 await usersCollection.doc("0d27d310-465d-11ed-bf28-e5af293557b6").delete();
+
+//Get Single Data
+var user=await usersCollection.doc("0d27d310-465d-11ed-bf28-e5af293557b6").get();
+print(user.data());
 
     // final CollectionReference users = FirebaseFirestore.instance.collection("users");
     // users.doc("newuserdoc").set({
